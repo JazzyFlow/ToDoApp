@@ -4,7 +4,11 @@ public class ToDoService : IToDoService
 
     public ToDoService()
     {
-        _items = new List<ToDoItem>();
+        _items = new List<ToDoItem>{
+            new ToDoItem { Id = 1, Task = "Buy milk", IsFinished = false },
+            new ToDoItem { Id = 2, Task = "Walk the dog", IsFinished = true },
+            new ToDoItem { Id = 3, Task = "Do laundry", IsFinished = false }
+        };
     }
 
     public async Task<List<ToDoItem>> GetAll()

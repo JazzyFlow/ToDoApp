@@ -7,26 +7,7 @@ import ToDoComponent from "./ToDoComponent";
 function ToDoListComponent() {
     // Initial dataset
     const [todos, setTodos] = useState([
-        {
-            id: 1,
-            task: "Clean the garage",
-            isFinished: false
-        },
-        {
-            id: 2,
-            task: "Clean the gutter",
-            isFinished: true
-        },
-        {
-            id: 3,
-            task: "Wash the dishes",
-            isFinished: true
-        },
-        {
-            id: 4,
-            task: "Buy vegetables for dinner",
-            isFinished: false
-        }
+        
     ]);
     const [task, setTask] = useState('');
     // Get todo data on backend
