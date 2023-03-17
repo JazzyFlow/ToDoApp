@@ -2,19 +2,41 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function ToDoComponent() {
-    const [todos, setTodos] = useState([]);
+    // Initial dataset
+    const [todos, setTodos] = useState([
+        {
+            id: 1,
+            task: "Clean the garage",
+            isFinished: false
+        },
+        {
+            id: 2,
+            task: "Clean the gutter",
+            isFinished: true
+        },
+        {
+            id: 3,
+            task: "Wash the dishes",
+            isFinished: true
+        },
+        {
+            id: 4,
+            task: "Buy vegetables for dinner",
+            isFinished: false
+        }
+    ]);
     const [task, setTask] = useState('');
-
+    // Get todo data on backend
     useEffect(() => {
         axios.get('https://localhost:7256/ToDo')
-            .then(response => setTodos(response.data))
+            .then(response => setTodos([...todos, ...response.data]))
             .catch(error => console.error(error));
     }, []);
-
+    // Set task title
     function handleTitleChange(event) {
         setTask(event.target.value);
     }
-
+    // Add task
     function handleSubmit(event) {
         event.preventDefault();
         axios.post('https://localhost:7256/ToDo', { id: todos.length + 1, task, isFinished: false })
@@ -22,7 +44,7 @@ function ToDoComponent() {
             .catch(error => console.error(error));
         setTask('');
     }
-
+    // Update task status
     function handleToggleComplete(todo) {
         axios.put(`https://localhost:7256/ToDo`, { ...todo, isFinished: !todo.isFinished })
             .then(() => {
@@ -33,7 +55,7 @@ function ToDoComponent() {
             })
             .catch(error => console.error(error));
     }
-
+    // Delete task
     function handleDelete(todo) {
         axios.delete(`https://localhost:7256/ToDo/${todo.id}`)
             .then(() => {

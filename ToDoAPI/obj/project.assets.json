@@ -229,11 +229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zen\\Desktop\\angular-app\\DotNet\\ToDoAPI\\ToDoAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Zen\\Desktop\\angular-app\\DotNet\\todo-app\\ToDoAPI\\ToDoAPI.csproj",
       "projectName": "ToDoAPI",
-      "projectPath": "C:\\Users\\Zen\\Desktop\\angular-app\\DotNet\\ToDoAPI\\ToDoAPI.csproj",
+      "projectPath": "C:\\Users\\Zen\\Desktop\\angular-app\\DotNet\\todo-app\\ToDoAPI\\ToDoAPI.csproj",
       "packagesPath": "C:\\Users\\Zen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zen\\Desktop\\angular-app\\DotNet\\ToDoAPI\\obj\\",
+      "outputPath": "C:\\Users\\Zen\\Desktop\\angular-app\\DotNet\\todo-app\\ToDoAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zen\\AppData\\Roaming\\NuGet\\NuGet.Config"
