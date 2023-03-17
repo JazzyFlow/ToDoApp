@@ -1,0 +1,108 @@
+.App {
+  height: 100%;
+  background: #FFF4E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ToDoContainer {
+  width: 50%;
+  height: 50%;
+  border: 2px solid #4D4D4D;
+  border-radius: 8px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ToDoContainer h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 10px;;
+}
+
+.ToDoContainer h1:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  background: #4D4D4D;
+  bottom: 0;
+}
+
+.ToDoContainer form {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+  padding: 5px;
+}
+
+.ToDoContainer form .AddButton {
+  width: 74px;
+  height: 32px;
+  background: #5D9C59;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF4E0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ToDoContainer form .AddButton:hover {
+  background: #C7E8CA;
+}
+
+.ToDoContainer form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.ToDoContainer form input {
+  margin: 0 10px;
+}
+
+.ToDoContainer ul {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.ToDoContainer ul::-webkit-scrollbar {
+  display: none;
+}
+
+.ToDoContainer li {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ToDoContainer li input {
+  width: 24px;
+  height: 24px;
+}
+
+.ToDoContainer li input:hover{
+  cursor: pointer;
+}
+
+.ToDoContainer .DeleteButton {
+  width: 74px;
+  height: 32px;
+  background: #B46060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF4E0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ToDoContainer .DeleteButton:hover {
+  background: #ffd78d;
+}

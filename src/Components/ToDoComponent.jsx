@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import "./ToDoComponent.css"
 import axios from 'axios';
 
 function ToDoComponent() {
@@ -37,8 +38,8 @@ function ToDoComponent() {
         setTask(event.target.value);
     }
     // Add task
-    function handleSubmit(event) {
-        event.preventDefault();
+    function handleSubmit() {
+        if (task === "") return;
         axios.post('https://localhost:7256/ToDo', { id: todos.length + 1, task, isFinished: false })
             .then(response => setTodos([...todos, { id: todos.length + 1, task, isFinished: false }]))
             .catch(error => console.error(error));
@@ -69,20 +70,23 @@ function ToDoComponent() {
 
     return (
         <div className="App">
-            <h1>ToDo App</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="text" value={task} onChange={handleTitleChange} />
-                <button type="submit">Add</button>
-            </form>
-            <ul>
-                {todos.map(todo => (
-                    <li key={todo.id}>
-                        <input type="checkbox" checked={todo.isFinished} onChange={() => handleToggleComplete(todo)} />
-                        <span style={{ textDecoration: todo.isFinished ? 'line-through' : 'none' }}>{todo.task}</span>
-                        <button onClick={() => handleDelete(todo)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
+            <div className="ToDoContainer">
+                <h1>ToDo App</h1>
+                <form>
+                    <span>Set a new task:</span>
+                    <input type="text" value={task} onChange={handleTitleChange} />
+                    <div className="AddButton" onClick={() => handleSubmit()}>Add</div>
+                </form>
+                <ul>
+                    {todos.map(todo => (
+                        <li key={todo.id}>
+                            <input type="checkbox" checked={todo.isFinished} onChange={() => handleToggleComplete(todo)} />
+                            <span style={{ textDecoration: todo.isFinished ? 'line-through' : 'none' }}>{todo.task}</span>
+                            <div className='DeleteButton' onClick={() => handleDelete(todo)}>Delete</div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }
