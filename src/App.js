@@ -1,8 +1,9 @@
-import ToDoComponent from './Components/ToDoComponent';
+import ToDoComponent from './Components/ToDoListComponent';
+import ToDoListComponent from './Components/ToDoListComponent';
 
 function App() {
   return (
-      <ToDoComponent />
+      <ToDoListComponent/>
   );
 }
 

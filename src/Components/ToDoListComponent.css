@@ -82,6 +82,14 @@
   justify-content: space-between;
 }
 
+.ToDoContainer li span {
+  width: 600px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+
 .ToDoContainer li input {
   width: 24px;
   height: 24px;
@@ -89,6 +97,44 @@
 
 .ToDoContainer li input:hover{
   cursor: pointer;
+}
+
+.ToDoContainer ul li .ActionCollection {
+  display: flex;
+  min-width: 160px;
+  justify-content: space-between;
+}
+
+.ToDoContainer .EditButton {
+  width: 74px;
+  height: 32px;
+  background: #2B3467;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF4E0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ToDoContainer .EditButton:hover {
+  background: #BAD7E9;
+}
+
+.ToDoContainer .SaveButton {
+  width: 74px;
+  height: 32px;
+  background: #2B3467;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF4E0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ToDoContainer .SaveButton:hover {
+  background: #BAD7E9;
 }
 
 .ToDoContainer .DeleteButton {
